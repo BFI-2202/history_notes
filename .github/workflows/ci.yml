@@ -30,7 +30,7 @@ jobs:
             INPUT_PATH="${item}"
             OUTPUT_DIRECTORY="${item/sources/renders}"
             OUTPUT_DIRECTORY="${OUTPUT_DIRECTORY%/*}"
-            mkdir "${{ github.workspace }}/${OUTPUT_DIRECTORY}"
+            mkdir -p "${{ github.workspace }}/${OUTPUT_DIRECTORY}"
             cd "${{ github.workspace }}/${OUTPUT_DIRECTORY}"
             pdflatex -synctex=1 -interaction=nonstopmode --shell-escape "${{ github.workspace }}/${INPUT_PATH}"
             pdflatex -synctex=1 -interaction=nonstopmode --shell-escape "${{ github.workspace }}/${INPUT_PATH}"
