@@ -32,8 +32,8 @@ jobs:
             OUTPUT_DIRECTORY="${OUTPUT_DIRECTORY%/*}"
             mkdir "${OUTPUT_DIRECTORY}"
             cd "${OUTPUT_DIRECTORY}"
-            pdflatex -synctex=1 -interaction=nonstopmode --shell-escape "${{ GITHUB_WORKSPACE }}/${INPUT_PATH}"
-            pdflatex -synctex=1 -interaction=nonstopmode --shell-escape "${{ GITHUB_WORKSPACE }}/${INPUT_PATH}"
+            pdflatex -synctex=1 -interaction=nonstopmode --shell-escape "${{ github.workspace }}/${INPUT_PATH}"
+            pdflatex -synctex=1 -interaction=nonstopmode --shell-escape "${{ github.workspace }}/${INPUT_PATH}"
           done
 
       - name: Commit changes
